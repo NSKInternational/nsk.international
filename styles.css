@@ -33,16 +33,6 @@ body {
 	overflow: hidden;
 }
 
-.center-container::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-	background: #6e6826;
-	opacity: 0.25;
-	z-index: -2;
-	pointer-events: none;
-}
-
 .center-container::after {
 	content: "";
 	position: absolute;
