@@ -1,26 +1,3 @@
-function scaleButtonStack() {
-	const wrapper = document.querySelector('.button-stack-wrapper');
-	const stack = document.querySelector('.button-stack');
-	if (!wrapper || !stack) return;
-
-	const buttonWidth = 240;
-	const sideMargin = 64;
-	const verticalMargin = 64;
-
-	const availableWidth = window.innerWidth - (sideMargin * 2);
-	const availableHeight = window.innerHeight - (verticalMargin * 2);
-
-	const scaleX = availableWidth / buttonWidth;
-	const scaleY = availableHeight / stack.offsetHeight;
-	const scale = Math.min(1, scaleX, scaleY);
-
-	stack.style.transform = `scale(${scale})`;
-	stack.style.transformOrigin = 'top center';
-	wrapper.style.minHeight = (stack.offsetHeight * scale) + 'px';
-	wrapper.style.marginTop = verticalMargin + 'px';
-	wrapper.style.marginBottom = verticalMargin + 'px';
-}
-
 // text background - ascii styles
 //
 // function renderAsciiOverlay() {
@@ -167,5 +144,3 @@ function scaleButtonStack() {
 // renderAsciiOverlay();
 
 // window.addEventListener('resize', renderAsciiOverlay);
-window.addEventListener('DOMContentLoaded', scaleButtonStack);
-window.addEventListener('resize', scaleButtonStack);

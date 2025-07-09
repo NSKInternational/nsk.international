@@ -7,12 +7,12 @@
 		<link rel="icon" type="image/x-icon" href="media/fav.ico">
 
 		<meta name="description" content="Welcome to the NSK!">
-		<meta name="author" content="NSK International Software ニューソフト協会">
+		<meta name="author" content="NSK INTERNATIONAL SOFTWARE ニューソフト協会">
 		<meta name="robots" content="index, follow">
 		<meta name="color-scheme" content="dark">
 
 		<meta property="og:image" content="media/og_image.png">
-		<meta property="og:title" content="NSK International Software">
+		<meta property="og:title" content="NSK INTERNATIONAL SOFTWARE">
 		<meta property="og:description" content="Welcome to the NSK!">
 		<meta property="og:type" content="website">
 
@@ -27,54 +27,47 @@
 		<script src="script.js"></script>
 	</head>
 	<body>
-		<div class="ascii-grid"></div>
-
-		<img src="/media/whiteBackgroundTop.png" alt="" class="bg-top" draggable="false">
-		<img src="/media/whiteBackgroundBot.png" alt="" class="bg-bottom" draggable="false">
-
-		<div class="button-stack-wrapper">
-			<div class="button-stack">
-				<div class="dirk-text"> // NSK International Software</div>
-				<a class="stack-btn" href="https://nskinternational.itch.io" target="_blank">
-					S O P A
-					<div class="sub-desc-row">
-						<span class="sub-desc-left">Itch.io</span>
-						<span class="sub-desc-main">Not Done</span>
-					</div>
-					<div class="desc">
-						"SOPA" Progression Tracker is a program for Linux, Windows, and macOS that helps you visualize progress in a certain action.
-					</div>
-				</a>
-				<a class="stack-btn" href="https://nskinternational.itch.io" target="_blank">
-					I T C H
-					<div class="sub-desc-row">
-						<span class="sub-desc-left">Games/Tools</span>
-						<span class="sub-desc-main">Programs</span>
-					</div>
-				</a>
-				<a class="stack-btn" href="https://github.com/nskinternational" target="_blank">
-					GIT HUB
-					<div class="sub-desc-row">
-						<span class="sub-desc-left">Some of it</span>
-						<span class="sub-desc-main">Source Code</span>
-					</div>
-				</a>
-				<a class="stack-btn" href="https://x.com/magnusnsk" target="_blank">
-					TWITTER
-					<div class="sub-desc-row">
-						<span class="sub-desc-left">Photos/Updates</span>
-						<span class="sub-desc-main">MagnusNSK</span>
-					</div>
-				</a>
-				<a class="stack-btn" href="https://youtube.com/@magnusnsk" target="_blank">
-					YOUTUBE
-					<div class="sub-desc-row">
-						<span class="sub-desc-left">Videos</span>
-						<span class="sub-desc-main">MagnusNSK</span>
-					</div>
-				</a>
-				<div class="dirk-text"> // ニューソフト協会 / NSK . INT</div>
-			</div>
+		<div class="nsk-text">// NSK INTERNATIONAL SOFTWARE</div>
+		<div class="center-container">
+			<button class="nav-btn" data-href="https://nskinternational.itch.io">
+				<span class="button-content">S O P A</span>
+				<span class="button-after">PROGRESSION TRACKER PROGRAM</span>
+			</button>
+			<button class="nav-btn" data-href="https://nskinternational.itch.io">
+				<span class="button-content">I T C H</span>
+				<span class="button-after">DOWNLOAD TOOLS AND GAMES</span>
+			</button>
+			<button class="nav-btn" data-href="https://github.com/nskinternational">
+				<span class="button-content">G I T H U B</span>
+				<span class="button-after">PROJECTS AND SOURCE CODE</span>
+			</button>
+			<button class="nav-btn" data-href="https://x.com/magnusnsk">
+				<span class="button-content">T W I T T E R</span>
+				<span class="button-after">IMAGES AND OTHER THINGS</span>
+			</button>
+			<button class="nav-btn" data-href="https://youtube.com/@magnusnsk">
+				<span class="button-content">Y O U T U B E</span>
+				<span class="button-after">VIDEOS AND OTHER THINGS</span>
+			</button>
+			<div class="sub-text">CLICK / TAP TWICE TO VISIT</div>
 		</div>
+		<script>
+			document.querySelectorAll('.nav-btn').forEach(btn => {
+				btn.dataset.clicked = "0";
+				btn.addEventListener('click', function(e) {
+					if (btn.dataset.clicked === "0") {
+						e.preventDefault();
+						btn.classList.add('show-after');
+						btn.dataset.clicked = "1";
+					} else {
+						window.location.href = btn.dataset.href;
+					}
+				});
+				btn.addEventListener('blur', function() {
+					btn.classList.remove('show-after');
+					btn.dataset.clicked = "0";
+				});
+			});
+		</script>
 	</body>
 </html>
