@@ -54,6 +54,7 @@ button {
 	color: #ffffff;
 	opacity: 0.85;
 	transition: 0.4s;
+	filter: blur(0.5px);
 	transform: scaleY(0.7);
 	text-align: justify;
 	display: block;
@@ -126,7 +127,7 @@ button.show-after {
 	opacity: 0.75;
 	font-size: 20px;
 	font-family: "Noto Sans Mono", "MonoBackup", monospace;
-	font-weight: 400;
+	font-weight: 900;
 	pointer-events: none;
 	user-select: none;
 	z-index: 1;
