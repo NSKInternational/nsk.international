@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://nsk.international/sitemap.xml
